@@ -1,0 +1,13 @@
+# [Tarabish]
+
+This is a Dart implementation of a card deck with shuffle and deal functionality. The project will be extended to implement a card game called Tarabish ( sometimes referred to as Klabberjass - http://en.wikipedia.org/wiki/Klaberjass)
+
+This project was built in these languages:
+* [Dart](http://dartlang.org/)
+
+It makes use of several frameworks and components, including:
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+
+The card deck was based on http://benyarbrough.com/playing-cards written in CoffeeScript, and the code was ported to Dart.
+
+Please feel free to offer any suggestions that will improve the game.
