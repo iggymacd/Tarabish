@@ -1,0 +1,173 @@
+
+/* ==|== primary styles =====================================================
+   Author: Ben Yarbrough
+   ========================================================================== */
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection declarations have to be separate
+::-moz-selection {
+  background: #49afcd;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #49afcd;
+  color: #fff;
+  text-shadow: none;
+}
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+#play {
+  margin-bottom: 8px;
+}
+
+label {
+   display: inline-block;
+   vertical-align: middle;
+}
+
+select {
+   display: inline-block;
+   width: 60px;
+}
+
+// minimalist cards
+// .card {
+//   display: inline-block;
+//   padding: 14px 10px;
+//   margin: 4px;
+//   .border-radius(8px);
+//   .box-shadow(~"1px 1px 1px 2px #ccc");
+// }
+
+
+/* ==|== card styles =====================================================
+   Author: Ben Yarbrough
+   Loosely based on: http://selfthinker.github.com/CSS-Playing-Cards/
+   ========================================================================== */
+
+#card-table {
+
+  .card {
+    display: inline-block;
+    width: 3.3em;
+    height: 4.6em;
+    border: 1px solid #666;
+    border-radius: .3em;
+    .border-radius(.3em);
+    padding: .25em;
+    margin: 0 .5em .5em 0;
+    text-align: center;
+    font-size: 1.2em; // adjust this value to make bigger or smaller cards
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    position: relative;
+    bottom: 0;
+    .transition(~"bottom .15s"); // animate back to 0 from hover state
+    background-color: #fff;
+    .box-shadow(~".2em .2em .5em #333");
+  }
+
+  // hover state
+  .card:hover {
+    bottom: 1em;
+    .transition(~"bottom .15s");
+  }
+
+  
+  // Suit colors
+  // ------------------
+  
+  .card.diams {
+    color: #00f;
+  }
+
+  .card.hearts {
+    color: #f00;
+  }
+
+  .card.spades {
+    color: #000;
+  }
+
+  .card.clubs {
+    color: #090;
+  }
+
+  
+  // Top left - rank and suit
+  // ------------------
+
+  .card .rank,
+  .card .suit {
+    display: block;
+    line-height: 1;
+    text-align: left;
+  }
+
+  .card .rank {
+  }
+
+  .card .suit {
+    line-height: .7;
+  }
+  
+  .card .rank:after {
+    position: absolute;
+    top: .25em;
+    left: .25em;
+    background: #fff;
+  }
+
+  
+  // Middle - big suit
+  // ------------------
+  
+  .card .suit:after {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 3em;
+    right: .1em;
+    bottom: .25em;
+    word-spacing: normal;
+    letter-spacing: normal;
+    line-height: 1;
+  }
+  
+  .card .suit:after {
+    font-family: Arial, sans-serif;
+    line-height: .9;
+    bottom: .35em;
+  }
+
+  .card.diams .suit:after {
+    content: "\2666";
+    right: .4em;
+  }
+
+  .card.hearts .suit:after {
+    content: "\2665";
+    right: .35em;
+  }
+
+  .card.spades .suit:after {
+    content: "\2660";
+    right: .35em;
+  }
+
+  .card.clubs .suit:after {
+    content: "\2663";
+    right: .3em;
+  }
+
+  // Smaller cards in responsive-767px-max.less
+}
