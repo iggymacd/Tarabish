@@ -6,6 +6,7 @@ class PlayerView {
   static void renderPlayer(var player, var rootElement){
     //var playerCounter = 0;
     DivElement handDiv;
+    DivElement rowDiv;
     HeadingElement playerHeading;// = new HeadingElement.h2();
     SpanElement cardSpan;// = new Element.tag('span');
     SpanElement rankSpan;
@@ -14,7 +15,7 @@ class PlayerView {
 
     wellDiv = new Element.tag('div');
     wellDiv.classes.add('well');
-    wellDiv.classes.add('span${player.name == '0' || player.name == '3' ? '7 offset1' :'4'}');
+    wellDiv.classes.add('span${player.name == '0' || player.name == '3' ? '3 offset1' :'3'}');
     playerHeading = new HeadingElement.h2();
     playerHeading.innerHTML = 'Player ${playerCounter++}';
     wellDiv.insertAdjacentElement('beforeend', playerHeading);
@@ -35,7 +36,15 @@ class PlayerView {
       handDiv.insertAdjacentElement('beforeend', cardSpan);
     }
     playerHeading.insertAdjacentElement('afterend', handDiv);
-    rootElement.insertAdjacentElement('beforeend', wellDiv);
+    if(player.name == '0' || player.name == '3'){
+      rowDiv = new Element.tag('div');
+      rowDiv.classes.add('row');
+      rowDiv.insertAdjacentElement('afterbegin', wellDiv);
+      rootElement.insertAdjacentElement('beforeend', rowDiv);
+    }else{
+      rootElement.insertAdjacentElement('beforeend', wellDiv);
+    }
+    
 
   }
 }

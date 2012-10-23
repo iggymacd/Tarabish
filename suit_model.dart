@@ -22,9 +22,8 @@ List suits = [
               new SuitModel(3)
               ];
 class SuitModel {
-  var suitValue;
   SuitModel(this.suitValue){
-    letter = 'CDHS'[suitValue];
+    letter = 'DCHS'[suitValue];
     back = 'nbsp';
     color = (letter == 'C' || letter == 'S' ? 'black' : 'red' );
     if(letter == 'C'){
@@ -37,6 +36,7 @@ class SuitModel {
       name = 'spades';
     }
   }
+  var suitValue;
   var letter;
   var color;
   var name;

@@ -26,7 +26,7 @@ List ranks = [
 class RankModel {
   var rankValue;
   RankModel(this.rankValue){
-    letter = rankValue == 9 ? '10' :'A23456789TJQK'[rankValue];
+    letter = rankValue == 8 ? '10' :'23456789TJQKA'[rankValue];
     //nextLower = (rankValue == 0 ? null : ranks[rankValue - 1]);
     //nextHigher = (rankValue == 12 ? null : ranks[rankValue + 1]);
   }

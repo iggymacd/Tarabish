@@ -1,5 +1,6 @@
 library model;
 import 'dart:math';
+import 'controller.dart';
 part 'game_model.dart';
 part 'rank_model.dart';
 part 'suit_model.dart';
