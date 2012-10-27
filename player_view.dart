@@ -3,7 +3,8 @@ class PlayerView {
   static num playerCounter = 1;
   //PlayerModel player;
   PlayerView();
-  static void renderPlayer(var player, var rootElement){
+  static Map positions = {"0":"north","1":"west","2":"east","3":"south"};
+  static void renderPlayer(var player, Element rootElement){
     //var playerCounter = 0;
     DivElement handDiv;
     DivElement rowDiv;
@@ -12,10 +13,14 @@ class PlayerView {
     SpanElement rankSpan;
     SpanElement suitSpan;
     DivElement wellDiv;// = new Element.tag('div');
-
-    wellDiv = new Element.tag('div');
-    wellDiv.classes.add('well');
-    wellDiv.classes.add('span${player.name == '0' || player.name == '3' ? '3 offset1' :'3'}');
+    var position = '#${positions[player.name]}';
+    print(position);
+    print(rootElement.id);
+    wellDiv = query(position);//new Element.tag('div');
+    wellDiv.innerHTML = '';
+    //print(wellDiv);
+    //wellDiv.classes.add('well');
+    //wellDiv.classes.add('span${player.name == '0' || player.name == '3' ? '3 offset1' :'3'}');
     playerHeading = new HeadingElement.h2();
     playerHeading.innerHTML = 'Player ${playerCounter++}';
     wellDiv.insertAdjacentElement('beforeend', playerHeading);
@@ -36,14 +41,14 @@ class PlayerView {
       handDiv.insertAdjacentElement('beforeend', cardSpan);
     }
     playerHeading.insertAdjacentElement('afterend', handDiv);
-    if(player.name == '0' || player.name == '3'){
-      rowDiv = new Element.tag('div');
-      rowDiv.classes.add('row');
-      rowDiv.insertAdjacentElement('afterbegin', wellDiv);
-      rootElement.insertAdjacentElement('beforeend', rowDiv);
-    }else{
-      rootElement.insertAdjacentElement('beforeend', wellDiv);
-    }
+//    if(player.name == '0' || player.name == '3'){
+//      rowDiv = new Element.tag('div');
+//      rowDiv.classes.add('row');
+//      rowDiv.insertAdjacentElement('afterbegin', wellDiv);
+//      rootElement.insertAdjacentElement('beforeend', rowDiv);
+//    }else{
+      //rootElement.insertAdjacentElement('beforeend', wellDiv);
+//    }
     
 
   }

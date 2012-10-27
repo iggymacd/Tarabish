@@ -1,11 +1,17 @@
 import 'dart:html';
+import 'dart:isolate';
 import 'view.dart';
 import 'controller.dart';
 
 void main() {
-  LocalWindow myWindow = window;
-  GameView gameView = new GameView(myWindow);
-  GameController gameController = new GameController(gameView);
+  //var myWindow = window;
+  //GameController gameController = new GameController();
+  var viewWorker = spawnFunction(launchWorker);
+  port.receive((var msg, SendPort replyTo){
+    print('in main receive...$msg');
+    //port.close();
+  });
+  viewWorker.send('hello there', port.toSendPort());
 }
 
 

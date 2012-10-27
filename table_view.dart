@@ -7,7 +7,7 @@ class TableView {
   }
   
   renderTable(var hands){
-    rootElement.innerHTML = '';
+    //rootElement.innerHTML = '';
     PlayerView.playerCounter = 1;
     for(final player in hands){
       PlayerView.renderPlayer(player, rootElement);
