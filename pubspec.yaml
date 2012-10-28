@@ -1,0 +1,6 @@
+name:  tarabish_game
+description:  A sample application
+
+dependencies:
+  unittest: { sdk: unittest }
+  web_components: 0.2.4
