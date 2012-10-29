@@ -23,6 +23,9 @@ class PlayerView {
     //wellDiv.classes.add('span${player.name == '0' || player.name == '3' ? '3 offset1' :'3'}');
     playerHeading = new HeadingElement.h2();
     playerHeading.innerHTML = 'Player ${playerCounter++}';
+    if(player.isDealer){
+      playerHeading.insertAdjacentText('beforeend', ' - Dealer');
+    }
     wellDiv.insertAdjacentElement('beforeend', playerHeading);
     handDiv = new Element.tag('div');
     handDiv.classes.add('hand');
@@ -39,6 +42,11 @@ class PlayerView {
       cardSpan.insertAdjacentElement('afterbegin', rankSpan);
       rankSpan.insertAdjacentElement('afterend', suitSpan);
       handDiv.insertAdjacentElement('beforeend', cardSpan);
+    }
+    if(player.isNextToPlay){
+      HeadingElement headingElement = new HeadingElement.h3();
+      headingElement.innerHTML = 'Next To Play';
+      playerHeading.insertAdjacentElement('afterend', headingElement);
     }
     playerHeading.insertAdjacentElement('afterend', handDiv);
 //    if(player.name == '0' || player.name == '3'){

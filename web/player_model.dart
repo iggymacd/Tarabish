@@ -1,9 +1,13 @@
 //library model;
 class PlayerModel {
   var name;
+  bool isDealer;
+  bool isNextToPlay;
   List cards;
   PlayerModel(this.name){
     cards = new List();
+    isDealer = false;
+    isNextToPlay = false;
   }
   
   List sortCards(){
